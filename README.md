@@ -32,11 +32,11 @@ This is a monorepo with:
 1. Create a `.env` file in the `server` directory based on the `.env.example` file:
    ```
    PORT=5000
-   GITHUB_CLIENT_ID=your_github_client_id
-   GITHUB_CLIENT_SECRET=your_github_client_secret
+   GITHUB_CLIENT_ID=your_github_client_id (From github/Settings/Developer settings/OAuth Apps)
+   GITHUB_CLIENT_SECRET=your_github_client_secret (From github/Settings/Developer settings/OAuth Apps)
    CLIENT_URL=http://localhost:3000
-   SERVER_URL=http://localhost:5000
-   JWT_SECRET=your_jwt_secret_key
+   SERVER_URL=http://localhost:5001
+   JWT_SECRET=your_jwt_secret_key (get it by running `openssl rand -base64 32`)
    ```
    Replace the placeholder values with your actual GitHub OAuth App credentials.
 
@@ -58,7 +58,7 @@ npm start
 
 This will run:
 - Frontend at http://localhost:3000
-- Backend at http://localhost:5000
+- Backend at http://localhost:5001
 
 ## Features
 
