@@ -10,13 +10,14 @@ function AuthCallback() {
 
   useEffect(() => {
     const handleCallback = () => {
-      // Get token from URL query parameters
+      // Get token and provider from URL query parameters
       const query = new URLSearchParams(location.search);
       const token = query.get('token');
+      const provider = query.get('provider') || 'github';
 
       if (token) {
         // Set the token in auth context
-        setToken(token);
+        setToken(token, provider);
         
         // Navigate to repos page
         navigate('/repos');

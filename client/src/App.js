@@ -30,9 +30,10 @@ function App() {
 
 // PrivateRoute component to protect routes that require authentication
 function PrivateRoute({ children }) {
-  const token = localStorage.getItem('github_token');
+  const githubToken = localStorage.getItem('github_token');
+  const jiraToken = localStorage.getItem('jira_token');
   
-  if (!token) {
+  if (!githubToken && !jiraToken) {
     return <Navigate to="/" replace />;
   }
   
